@@ -9,13 +9,12 @@ API для сервиса сокращения ссылок (аналог bitly)
 ## Как локально запустить проект:
 Пример .env находится в .infra/.env.example
 1. Клонировать репозиторий и перейти в него в командной строке:
-
 ```bash
 git git@github.com:BocharnikovSergey/short_link.git
 cd ./short_link
 ```
-2. Cоздать и активировать виртуальное окружение:
 
+2. Cоздать и активировать виртуальное окружение:
 Windows
 ```bash
 python -m venv venv
@@ -26,22 +25,32 @@ Linux/macOS
 python3 -m venv venv
 source venv/bin/activate
 ```
+
 3. Установить зависимости из файла requirements.txt:
 ```bash
 pip install -r app/requirements.txt
 
 ```
+
 4. Создание миграций:
 ```bash
 alembic -c ./app/alembic.ini upgrade head
 ```
+
 5. Запуск приложения для разработки
 ```bash
 uvicorn app.main:app --reload
 ```
+
 6. Запуск приложения через Docker:
 ```bash
 docker compose -f infra/docker-compose.yml up --build
+```
+
+## Запуск тестов.
+Из главной директории проекта для запуска тестов нужно выполнить команду.
+```bash
+pytest
 ```
 
 ## Документация:

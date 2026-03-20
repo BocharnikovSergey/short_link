@@ -33,7 +33,7 @@ async def create_short_link(
 
 @router.get(
     '/{short_id}',
-    status_code=status.HTTP_301_MOVED_PERMANENTLY,
+    status_code=status.HTTP_307_TEMPORARY_REDIRECT,
     summary='Редирект.'
 )
 async def redirect(
